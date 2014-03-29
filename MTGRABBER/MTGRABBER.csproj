@@ -85,6 +85,16 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FORMATTER\FORMATTER.csproj">
+      <Project>{cd1509ba-ac5b-49b1-9639-6b971f515b57}</Project>
+      <Name>FORMATTER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MODEL\MODEL.csproj">
+      <Project>{39065bba-cd3d-45f4-8d09-c3cdb4d85252}</Project>
+      <Name>MODEL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

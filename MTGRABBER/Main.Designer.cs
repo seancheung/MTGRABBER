@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonCheckInvert = new DevExpress.XtraEditors.SimpleButton();
@@ -134,6 +133,7 @@
             this.simpleButtonCheckAll.Size = new System.Drawing.Size(96, 50);
             this.simpleButtonCheckAll.TabIndex = 0;
             this.simpleButtonCheckAll.Text = "Check All";
+            this.simpleButtonCheckAll.Click += new System.EventHandler(this.simpleButtonCheckAll_Click);
             // 
             // layoutControl2
             // 

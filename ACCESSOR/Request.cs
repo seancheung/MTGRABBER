@@ -1,0 +1,58 @@
+﻿using System.IO;
+using System.Net;
+
+namespace ACCESSOR
+{
+    public class Request
+    {
+        /// <summary>
+        /// Get Data from the provided url
+        /// </summary>
+        /// <param name="url">A url to create request</param>
+        /// <returns>Data from the response</returns>
+        public static string GetWebData(string url)
+        {
+            HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+            httpWebRequest.AllowAutoRedirect = false;
+            HttpWebResponse httpWebResponse = null;
+            string data = string.Empty;
+
+            int tryCount = 10;
+
+            while (tryCount > 0)
+            {
+                try
+                {
+                    httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                    break;
+                }
+                catch (WebException ex)
+                {
+                    if (ex.Status == WebExceptionStatus.Timeout)
+                    {
+                        tryCount--;
+                    }
+                    else
+                    {
+                        httpWebResponse = (HttpWebResponse)ex.Response;
+                        break;
+                    }
+                }
+            }
+
+            if (!httpWebResponse.StatusDescription.Equals("Found"))
+            {
+                using (StreamReader streamReader = new StreamReader(httpWebResponse.GetResponseStream()))
+                {
+                    data = streamReader.ReadToEnd();
+                }
+            }
+
+            httpWebResponse.Close();
+
+            return data;
+
+        }
+
+    }
+}

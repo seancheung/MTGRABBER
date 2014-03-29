@@ -39,8 +39,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formatter.cs" />
+    <Compile Include="FormatCard.cs" />
+    <Compile Include="FormatDetail.cs" />
+    <Compile Include="FormatForeignDetail.cs" />
+    <Compile Include="FormatForeignID.cs" />
+    <Compile Include="FormatID.cs" />
+    <Compile Include="FormatLegacy.cs" />
+    <Compile Include="FormatLegacyList.cs" />
+    <Compile Include="FormatterTag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ACCESSOR\ACCESSOR.csproj">
+      <Project>{edac7a6d-411b-483a-80ae-50d8a8ecc4e5}</Project>
+      <Name>ACCESSOR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MODEL\MODEL.csproj">
+      <Project>{39065bba-cd3d-45f4-8d09-c3cdb4d85252}</Project>
+      <Name>MODEL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FORMATTER
 {
-    public class Formatter
+    public class FormatCard
     {
-
+        
     }
 }
