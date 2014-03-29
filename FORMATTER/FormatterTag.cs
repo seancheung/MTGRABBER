@@ -2,7 +2,7 @@
 
 namespace FORMATTER
 {
-    public class FormatterTag
+    internal class FormatterTag
     {
         /// <summary>
         /// Remove all html tags

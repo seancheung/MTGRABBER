@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace FORMATTER
 {
-    class FormatLegacy
+    internal class FormatLegacy
     {
         /// <summary>
         /// Get card legacy
@@ -61,7 +61,7 @@ namespace FORMATTER
         /// </summary>
         /// <param name="cards">Cards to process</param>
         /// <returns>A list of cards with legacy filled</returns>
-        public static List<Card> GetIDList(List<Card> cards)
+        public static List<Card> GetCards(List<Card> cards)
         {
             List<Card> result = new List<Card>();
             foreach (var item in cards)

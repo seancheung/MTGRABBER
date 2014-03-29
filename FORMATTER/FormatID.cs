@@ -1,11 +1,15 @@
 ﻿using ACCESSOR;
 using MODEL;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace FORMATTER
 {
-    public class FormatID
+    internal class FormatID
     {
+        //[DllImport("kernel32.dll")]
+        //public static extern bool AllocConsole();
+
         /// <summary>
         /// Get Card ID,Cost,Text from webdata
         /// </summary>
@@ -36,6 +40,7 @@ namespace FORMATTER
                         Text = webdata.Substring(num3, num4 - num3).Replace("<br />", "\n").Trim()
                     };
                     result.Add(item);
+                    //System.Console.WriteLine(string.Format("{0} Complete", item.ID));
                 }
             }
 
@@ -60,8 +65,10 @@ namespace FORMATTER
         /// <param name="setname">Full english set name</param>
         /// <param name="setcode">Setcode in capital</param>
         /// <returns>A list of cards</returns>
-        public static List<Card> GetIDList(string setname, string setcode)
+        public static List<Card> GetCards(string setname, string setcode)
         {
+            //AllocConsole();
+            //System.Console.WriteLine("Started:");
             return GetBasic(Request.GetWebData(GetURL(setname, setcode)));
         }
     }

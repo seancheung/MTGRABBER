@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace FORMATTER
 {
-    public class FormatForeignID
+    internal class FormatForeignID
     {
         /// <summary>
         /// Get Foreign ID
@@ -52,7 +52,7 @@ namespace FORMATTER
         /// <param name="cards">Cards to process</param>
         /// <param name="lang">Language</param>
         /// <returns>A list of cards</returns>
-        public static List<Card> GetIDList(List<Card> cards, LANGUAGE lang)
+        public static List<Card> GetCards(List<Card> cards, LANGUAGE lang)
         {
             List<Card> result = new List<Card>();
 

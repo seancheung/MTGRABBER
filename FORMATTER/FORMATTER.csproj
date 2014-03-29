@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="FormatCard.cs" />
     <Compile Include="FormatDetail.cs" />
+    <Compile Include="FormatEx.cs" />
     <Compile Include="FormatForeignDetail.cs" />
     <Compile Include="FormatForeignID.cs" />
     <Compile Include="FormatID.cs" />

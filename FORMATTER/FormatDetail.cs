@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace FORMATTER
 {
-    public class FormatDetail
+    internal class FormatDetail
     {
         /// <summary>
         /// Get card details
@@ -363,7 +363,7 @@ namespace FORMATTER
         /// </summary>
         /// <param name="cards">Cards to process</param>
         /// <returns>A list of cards with details filled</returns>
-        public static List<Card> GetIDList(List<Card> cards)
+        public static List<Card> GetCards(List<Card> cards)
         {
             List<Card> result = new List<Card>();
             foreach (var item in cards)

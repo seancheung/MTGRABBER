@@ -10,11 +10,15 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using FORMATTER;
 using MODEL;
+using System.Runtime.InteropServices;
+using log4net;
 
 namespace MTGRABBER
 {
     public partial class Main : DevExpress.XtraEditors.XtraForm
     {
+        private static readonly ILog logger = LogManager.GetLogger("Log4NetTest.LogTest");
+
         public Main()
         {
             InitializeComponent();
@@ -22,10 +26,10 @@ namespace MTGRABBER
 
         private void simpleButtonCheckAll_Click(object sender, EventArgs e)
         {
-            List<Card> cards = new List<Card>();
-            cards = FormatID.GetIDList("Theros", "THS");
-            cards = FormatForeignID.GetIDList(cards, LANGUAGE.Chinese_Simplified);
-            string s = string.Empty;
+            //List<Card> cards = new List<Card>();
+            //cards = FormatCard.GetCards("Theros", "THS");
+            if (logger.IsDebugEnabled) logger.Debug("DEBUG");
+            if (logger.IsInfoEnabled) logger.Info("INFO");
         }
     }
 }

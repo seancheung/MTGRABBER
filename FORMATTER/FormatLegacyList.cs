@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FORMATTER
 {
-    public class FormatLegacyList
+    internal class FormatLegacyList
     {
         /// <summary>
         /// Get a formatlist from a format

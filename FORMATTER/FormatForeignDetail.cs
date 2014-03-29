@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace FORMATTER
 {
-    public class FormatForeignDetail
+    internal class FormatForeignDetail
     {
         /// <summary>
         /// Get card Foreign details
@@ -170,13 +170,20 @@ namespace FORMATTER
         /// </summary>
         /// <param name="cards">Cards to process</param>
         /// <returns>A list of cards with foreign details filled</returns>
-        public static List<Card> GetIDList(List<Card> cards)
+        public static List<Card> GetCards(List<Card> cards)
         {
             List<Card> result = new List<Card>();
             foreach (var item in cards)
             {
-                Card card = GetCard(item);
-                result.Add(card);
+                if (string.IsNullOrEmpty(item.zID))
+                {
+                    Card card = GetCard(item);
+                    result.Add(card);
+                }
+                else
+                {
+                    result.Add(item);
+                }
             }
 
             return result;
