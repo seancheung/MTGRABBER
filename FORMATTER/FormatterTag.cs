@@ -4,6 +4,8 @@ namespace FORMATTER
 {
     internal class FormatterTag
     {
+        private FormatterTag() { }
+
         /// <summary>
         /// Remove all html tags
         /// </summary>

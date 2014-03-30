@@ -1,10 +1,13 @@
 ﻿using System.IO;
 using System.Net;
+using MODEL;
 
 namespace ACCESSOR
 {
     public class Request
     {
+        private Request() { }
+
         /// <summary>
         /// Get Data from the provided url
         /// </summary>
@@ -35,6 +38,7 @@ namespace ACCESSOR
                     else
                     {
                         httpWebResponse = (HttpWebResponse)ex.Response;
+                        LoggerError.Log(ex.Message);
                         break;
                     }
                 }

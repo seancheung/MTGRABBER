@@ -7,6 +7,8 @@ namespace FORMATTER
 {
     internal class FormatForeignDetail
     {
+        private FormatForeignDetail() { }
+
         /// <summary>
         /// Get card Foreign details
         /// </summary>
@@ -147,7 +149,7 @@ namespace FORMATTER
             }
 
             return card;
-   
+
         }
 
         /// <summary>
@@ -175,15 +177,21 @@ namespace FORMATTER
             List<Card> result = new List<Card>();
             foreach (var item in cards)
             {
-                if (string.IsNullOrEmpty(item.zID))
+                double per = 1.0 * (cards.IndexOf(item) + 1) / cards.Count;
+                Consoler.Output(string.Format("Total {0:P1} complete\n 3.Getting card foreign details: {1:P1}", 0.4 + 0.2 * per, per));
+
+                if (!string.IsNullOrEmpty(item.zID))
                 {
                     Card card = GetCard(item);
-                    result.Add(card);
                 }
                 else
                 {
-                    result.Add(item);
+                    item.zName = "";
+                    item.zType = "";
+                    item.zText = "";
+                    item.zFlavor = "";
                 }
+                result.Add(item);
             }
 
             return result;

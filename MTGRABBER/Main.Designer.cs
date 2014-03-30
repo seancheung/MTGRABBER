@@ -62,6 +62,7 @@
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.richTextBoxInfo = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -149,6 +150,7 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.richTextBoxInfo);
             this.panelControl2.Controls.Add(this.dropDownButtonConvert);
             this.panelControl2.Controls.Add(this.buttonEditPath);
             this.panelControl2.Location = new System.Drawing.Point(12, 278);
@@ -400,6 +402,20 @@
             this.barButtonItem12.Id = 13;
             this.barButtonItem12.Name = "barButtonItem12";
             // 
+            // richTextBoxInfo
+            // 
+            this.richTextBoxInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxInfo.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.richTextBoxInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxInfo.Location = new System.Drawing.Point(2, 52);
+            this.richTextBoxInfo.Name = "richTextBoxInfo";
+            this.richTextBoxInfo.ReadOnly = true;
+            this.richTextBoxInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBoxInfo.Size = new System.Drawing.Size(226, 194);
+            this.richTextBoxInfo.TabIndex = 6;
+            this.richTextBoxInfo.TabStop = false;
+            this.richTextBoxInfo.Text = "";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,6 +484,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
+        private System.Windows.Forms.RichTextBox richTextBoxInfo;
 
     }
 }

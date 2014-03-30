@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v13.1" />
     <Reference Include="DevExpress.Data.v13.1" />
+    <Reference Include="DevExpress.Office.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v13.1" />
     <Reference Include="DevExpress.Sparkline.v13.1.Core" />
@@ -42,6 +43,7 @@
     <Reference Include="DevExpress.XtraEditors.v13.1" />
     <Reference Include="DevExpress.XtraLayout.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="log4net">
       <HintPath>..\MODEL\DLLs\log4net.dll</HintPath>
     </Reference>
@@ -90,6 +92,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CONVERTER\CONVERTER.csproj">
+      <Project>{70c45baa-6cc6-4197-a0b0-d6a0f8715196}</Project>
+      <Name>CONVERTER</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FORMATTER\FORMATTER.csproj">
       <Project>{cd1509ba-ac5b-49b1-9639-6b971f515b57}</Project>
       <Name>FORMATTER</Name>

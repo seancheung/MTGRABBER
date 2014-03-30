@@ -6,6 +6,8 @@ namespace FORMATTER
 {
     internal class FormatLegacy
     {
+        private FormatLegacy() { }
+
         /// <summary>
         /// Get card legacy
         /// </summary>
@@ -17,6 +19,7 @@ namespace FORMATTER
 
             if (!webdata.Contains("This card has restrictions in the following formats"))
             {
+                card.Legacy = string.Empty;
                 return card;
             }
 
@@ -66,6 +69,9 @@ namespace FORMATTER
             List<Card> result = new List<Card>();
             foreach (var item in cards)
             {
+                double per = 1.0 * (cards.IndexOf(item) + 1) / cards.Count;
+                Consoler.Output(string.Format("Total {0:P1} complete\n 4.Getting card legacy: {1:P1}", 0.6 + 0.2 * per, per));
+
                 Card card = GetCard(item);
                 result.Add(card);
             }

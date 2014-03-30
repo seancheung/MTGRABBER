@@ -10,6 +10,8 @@ namespace FORMATTER
 {
     internal class FormatLegacyList
     {
+        private FormatLegacyList() { }
+
         /// <summary>
         /// Get a formatlist from a format
         /// </summary>

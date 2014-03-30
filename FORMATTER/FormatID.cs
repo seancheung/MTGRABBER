@@ -7,8 +7,7 @@ namespace FORMATTER
 {
     internal class FormatID
     {
-        //[DllImport("kernel32.dll")]
-        //public static extern bool AllocConsole();
+        private FormatID() { }
 
         /// <summary>
         /// Get Card ID,Cost,Text from webdata
@@ -40,7 +39,6 @@ namespace FORMATTER
                         Text = webdata.Substring(num3, num4 - num3).Replace("<br />", "\n").Trim()
                     };
                     result.Add(item);
-                    //System.Console.WriteLine(string.Format("{0} Complete", item.ID));
                 }
             }
 

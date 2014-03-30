@@ -7,6 +7,8 @@ namespace FORMATTER
 {
     internal class FormatEx
     {
+        private FormatEx() { }
+
         /// <summary>
         /// Format foreign text
         /// </summary>
@@ -269,9 +271,28 @@ namespace FORMATTER
         {
             foreach (var item in cards)
             {
-                FormatzText(item);
-                FormatAdition(item);
-                FormatSpecialLetter(item);
+                double per = 1.0 * (cards.IndexOf(item) + 1) / cards.Count;
+                Consoler.Output(string.Format("Total {0:P1} complete\n 5.Formatting card: {1:P1}", 0.8 + 0.2 * per, per));
+
+                try
+                {
+                    FormatzText(item);
+                    FormatAdition(item);
+                    FormatSpecialLetter(item);
+                }
+                catch (Exception ex)
+                {
+                    string properties = string.Empty;
+                    foreach (System.Reflection.PropertyInfo p in item.GetType().GetProperties())
+                    {
+                        if (p.GetValue(item)==null)
+                        {
+                            p.SetValue(item, "NULL");
+                        }
+                        properties += string.Format("{0}:{1}\n", p.Name, p.GetValue(item));
+                    }
+                    LoggerError.Log(String.Format("{0}\n{1}", ex.Message, properties));
+                }
             }
 
             return cards;

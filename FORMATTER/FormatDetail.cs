@@ -8,6 +8,8 @@ namespace FORMATTER
 {
     internal class FormatDetail
     {
+        private FormatDetail() { }
+
         /// <summary>
         /// Get card details
         /// </summary>
@@ -368,6 +370,9 @@ namespace FORMATTER
             List<Card> result = new List<Card>();
             foreach (var item in cards)
             {
+                double per = 1.0 * (cards.IndexOf(item) + 1) / cards.Count;
+                Consoler.Output(string.Format("Total {0:P1} complete\n 1.Getting card details: {1:P1}", 0.2 * per, per));
+
                 Card card = GetCard(item);
                 if (card != null)
                 {
